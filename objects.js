@@ -61,3 +61,38 @@ class Person {
     this.bankAccount-=hamster.getPrice();
   }
 }
+
+// task 3: create a story with your person class
+
+// Instantiate a new Person named Timmy
+const timmy = new Person('Timmy');
+
+// Age Timmy five years
+timmy.ageUp(5);
+
+// At this point Timmy's a little bummed. As a precocious child, he feels he's "seen it all" already. Have him eat five times.
+timmy.eat(5);
+
+// Now Timmy's a little heavier than he wants to be. Kindergarten's coming up and he wants to look good. Have him exercise five times
+timmy.exercise(5);
+
+// Age Timmy 9 years
+timmy.ageUp(9);
+
+// Create a hamster named "Gus"
+const gus = new Hamster('Gus');
+
+// Set Gus's owner to the string "Timmy"
+gus.owner = 'Timmy';
+
+// Have Timmy "buy" Gus
+timmy.buyHamster(gus);
+
+// Age Timmy 15 years
+timmy.ageUp(15);
+
+// Have Timmy eat twice
+timmy.eat(2);
+
+// Have Timmy exercise twice
+timmy.exercise(2);
