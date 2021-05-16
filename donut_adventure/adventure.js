@@ -21,8 +21,16 @@ class Hero {
   announceHealth() {
     console.log(this.health);
   }
-  fight() {
-    console.log(`i\'m ready to rumble`);
+  fight(combatant) {
+    console.log(`\"i\'m ready to rumble\"`);
+
+    let num = Math.floor(Math.random() * (this.catchPhrases.length - 0));
+    let weapon = Object.keys(this.weapons)[num];
+    let hp = Object.values(this.weapons)[num];
+
+    combatant.health -= hp;
+
+    console.log(`${combatant.name} got hit by ${weapon}! His health is ${combatant.health}!`);
   }
 }
 
@@ -51,9 +59,30 @@ class Enemy {
   announceHealth() {
     console.log(this.health);
   }
-  fight() {
-    console.log(`i\'m gonna flatten you like a slice of pepperoni!`);
+  fight(combatant) {
+    console.log(`\"i\'m gonna flatten you like a slice of pepperoni!\"`);
+
+    let num = Math.floor(Math.random() * (this.catchPhrases.length - 0));
+    let weapon = Object.keys(this.weapons)[num];
+    let hp = Object.values(this.weapons)[num];
+
+    combatant.health -= hp;
+
+    console.log(`${combatant.name} got hit by ${weapon}! His health is ${combatant.health}!`);
   }
 }
 
 const pizzaRat = new Enemy('Pizza Rat');
+
+//Part 3: 'walking down the street'
+
+dougie.talkSass();
+pizzaRat.talkSmack();
+
+dougie.announceHealth();
+pizzaRat.announceHealth();
+
+//Part 4: Fight!
+
+pizzaRat.fight(dougie);
+dougie.fight(pizzaRat);
